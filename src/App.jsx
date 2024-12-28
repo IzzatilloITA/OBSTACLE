@@ -130,8 +130,8 @@ const OBSTACLE = () => {
     <div className="game-container" onTouchStart={handleTouch}>
       <div className="game-info">
         <h1>OBSTACLE by <a href="https://zimp.netlify.app/">ZIM</a> </h1>
-        <p>Score: {score}</p>
-        <p>High Score: {highScore}</p> {/* Добавляем отображение наилучшего рекорда */}
+        <p>Score: {score}⭐</p>
+        <p>High Score: {highScore}⭐</p> {/* Добавляем отображение наилучшего рекорда */}
         {isGameOver && <p>Game Over! Tap to Restart</p>}
         {/* Кнопка сброса рекорда */}
         <button className="reset-btn" onClick={resetHighScore}>Reset High Score</button>
