@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Russo+One&display=swap');
+
+/* Сброс стандартных отступов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Russo One", serif;
+}
+a{
+  color: #fff;
+  text-decoration: none;
+  font-family: "Ruslan Display", serif;
+}
+
+/* Общие стили для страницы */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e6e6e6; /* Лёгкий серый фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Контейнер игры */
+.game-container {
+  position: relative;
+  width: 600px;
+  height: 500px;
+  background-color: #ffffff;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Информация о игре */
+.game-info {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Игровая зона */
+.game-area {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff00004d;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Динозавр */
+.dino {
+  position: absolute;
+  bottom: 0;
+  left: 60px;
+  width: 45px;
+  height: 100px;
+  /* background-color: #34a853; Яркий зелёный цвет для динозавра */
+  /* border-radius: 50%; */
+  background-image: url(./img/dino.png);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  transition: bottom 0.3s ease-in-out;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+/* Препятствие */
+.obstacle {
+  position: absolute;
+  bottom: 0;
+  left: 300px;
+  width: 30px;
+  height: 40px;
+  background-image: url(./img/obstacle.png);
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  /* background-color: #ff7043; Цвет препятствий */
+  /* border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: moveObstacle 1.5s linear infinite; */
+}
+
+/* Анимация движения препятствий */
+@keyframes moveObstacle {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Стили для надписи "Game Over" */
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff3b30;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  text-align: center;
+}
+
+/* Фон земли */
+.game-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #8d6e63; /* Цвет земли */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+@media only screen and (max-width: 600px) {
+  /* Контейнер игры */
+  .game-container {
+   position: relative;
+  width: 300px;
+  height: 500px;
+  background-color: #ffffff;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+.reset-btn{
+  background-color: #ff372cac;
+  border: 0;
+  border-radius: 20px;
+  color: #333;
+  margin-top: 10px;
+  padding: 5px;
+}
